@@ -5,12 +5,12 @@ import 'package:to_do_app/Model/todo.dart';
 
 class items extends StatelessWidget {
   final Todo todo;
-  final onchange;
+  final onchanged;
   final ondelete;
   const items({
     Key? key,
     required this.todo,
-    required this.onchange,
+    required this.onchanged,
     required this.ondelete,
   }) : super(key: key);
 
@@ -20,17 +20,19 @@ class items extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () {
-          onchange(todo);
+          onchanged(todo);
         },
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         tileColor: Colors.white,
-        leading: Icon(Icons.check_box, color: Colors.blue),
+        leading: Icon(
+            todo.done ? Icons.check_box : Icons.check_box_outline_blank,
+            color: Colors.blue),
         title: Text(
           todo.todone!,
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
-            decoration: TextDecoration.lineThrough,
+            decoration: todo.done ? TextDecoration.lineThrough : null,
           ),
         ),
         contentPadding: EdgeInsets.all(15),

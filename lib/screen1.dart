@@ -25,7 +25,7 @@ class _Screen1State extends State<Screen1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[350],
+      backgroundColor: Colors.lightGreen[200],
       appBar: _appbar(),
       body: Stack(
         children: [
@@ -48,7 +48,7 @@ class _Screen1State extends State<Screen1> {
                       for (Todo todo in _searchTodo)
                         items(
                           todo: todo,
-                          onchange: _tochange,
+                          onchanged: _tochange,
                           ondelete: _todelete,
                         ),
                     ],
@@ -134,7 +134,7 @@ class _Screen1State extends State<Screen1> {
     _todoController.clear();
   }
 
-  void _runFilter(String enteredKeyword) {
+  void _runfilter(String enteredKeyword) {
     List<Todo> results = [];
     if (enteredKeyword.isEmpty) {
       results = todoslist;
@@ -152,7 +152,7 @@ class _Screen1State extends State<Screen1> {
 
   AppBar _appbar() {
     return AppBar(
-      backgroundColor: Colors.grey[350],
+      backgroundColor: Colors.teal,
       elevation: 0,
       title: Icon(
         Icons.menu,
