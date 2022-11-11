@@ -1,18 +1,18 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, camel_case_types, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
 import 'package:to_do_app/Model/todo.dart';
 
-class Items extends StatelessWidget {
+class items extends StatelessWidget {
   final Todo todo;
   final onchange;
   final ondelete;
-  const Items(
-      {Key? key,
-      required this.todo,
-      required this.onchange,
-      required this.ondelete})
-      : super(key: key);
+  const items({
+    Key? key,
+    required this.todo,
+    required this.onchange,
+    required this.ondelete,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +24,13 @@ class Items extends StatelessWidget {
         },
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         tileColor: Colors.white,
-        leading: Icon(
-            todo.done ? Icons.check_box : Icons.check_box_outline_blank,
-            color: Colors.blue),
+        leading: Icon(Icons.check_box, color: Colors.blue),
         title: Text(
           todo.todone!,
           style: TextStyle(
             fontSize: 20,
             color: Colors.black,
-            decoration: todo.done ? TextDecoration.lineThrough : null,
+            decoration: TextDecoration.lineThrough,
           ),
         ),
         contentPadding: EdgeInsets.all(15),
